@@ -1,0 +1,204 @@
+/* Import Google Font - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    background: #F2CB05;
+}
+::selection{
+    color: #fff;
+    background: #F2CB05;
+}
+.container{
+    max-width: 405px;
+    margin: 60px auto;
+    background: #fff;
+    border-radius: 7px;
+    padding: 28px 0px;
+}
+.task-input{
+    height: 52px;
+    padding: 0px 25px;
+    position: relative;
+}
+.task-input img{
+    position: absolute;
+    top: 50%;
+    transform: translate(17px, -50%);
+}
+.task-input input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    font-size: 18px;
+    border-radius: 5px;
+    border: 1px solid #999;
+    padding: 0 20px 0 53px;
+}
+.task-input input:focus, .task-input input.active{
+    padding-left: 52px;
+    border: 2px solid #F2CB05;
+}
+.task-input input::placeholder{
+    color: #bfbfbf;
+}
+.controls, li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.controls{
+    padding: 18px 25px;
+    border-bottom: 1px solid #ccc;
+}
+.filters span{
+    cursor: pointer;
+    margin: 0 8px;
+    font-size: 17px;
+}
+.filters span:first-child{
+    margin-left: 0px;
+}
+.filters span.active{
+    color: #F2CB05;
+}
+.controls .clear-btn{
+    outline: none;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 4px;
+    padding: 7px 13px;
+    background: #F2CB05;
+    opacity: 0.6;
+    pointer-events: none;
+    transition: transform 0.2s ease;
+}
+.controls .clear-btn.active{
+    opacity: 1;
+    pointer-events: auto;
+}
+.controls .clear-btn:active{
+    transform: scale(0.9);
+}
+.task-box{
+    margin: 20px 5px 0px 0px;
+    padding: 0px 20px 10px 25px;
+}
+.task-box.overflow{
+    overflow-y: auto;
+    max-height: 300px;
+}
+.task-box::-webkit-scrollbar{
+    width: 5px;
+}
+.task-box::-webkit-scrollbar-track{
+    background: #f1f1f1;
+    border-radius: 25px;
+}
+.task-box::-webkit-scrollbar-thumb{
+    background: #e6e6e6;
+    border-radius: 25px;
+}
+.task-box .task{
+    list-style: none;
+    font-size: 17px;
+    margin-bottom: 18px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #ccc;
+    align-items: flex-start;
+}
+.task-box .task:last-child{
+    margin-bottom: 0px;
+    border-bottom: 0px;
+    padding-bottom: 0px;
+}
+.task label{
+    max-width: 320px;
+    display: flex;
+    align-items: flex-start;
+}
+.task label p{
+    max-width: 300px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    word-wrap: break-word;
+}
+.task label p.checked{
+    text-decoration: line-through;
+}
+.task label input{
+    margin-top: 7px;
+    margin-right: 12px;
+    accent-color: #F2CB05;
+}
+.task .settings{
+    cursor: pointer;
+    position: relative;
+}
+.settings .task-menu{
+    position: absolute;
+    right: -5px;
+    bottom: -65px;
+    background: #fff;
+    z-index: 2;
+    transform: scale(0);
+    border-radius: 5px;
+    padding: 5px 0px;
+    transform-origin: top right;
+    transition: transform 0.2s ease;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.15);
+}
+.settings .task-menu.show{
+    transform: scale(1);
+}
+.task-menu li{
+    height: 25px;
+    font-size: 16px;
+    padding: 17px 15px;
+    margin-bottom: 2px;
+    justify-content: flex-start;
+}
+.task-menu li:last-child{
+    margin-bottom: 0px;
+}
+.task-menu li:hover{
+    background: #f5f5f5;
+}
+.task-menu li i{
+    padding-right: 8px;
+}
+
+@media screen and (max-width: 425px){
+    .container{
+        margin: 20px 10px;
+        padding: 20px 0px;
+    }
+    .filters span{
+        margin: 0 5px;
+    }
+    .task-input{
+        padding: 0 20px;
+    }
+    .controls{
+        padding: 18px 20px;
+    }
+    .task-box{
+        margin: 20px 5px 0px 0px;
+        padding: 0px 15px 10px 20px;
+    }
+    .task-box.overflow{
+        overflow-y: auto;
+        max-height: 60vh;
+    }
+    /* .task label input{
+        
+    } */
+}
